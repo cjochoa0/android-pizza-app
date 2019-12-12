@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/pizzaImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/pizzaShapeToggleGroup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_round_pizza" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/pizzaShapeToggleGroup"
+            android:layout_width="196dp"
+            android:layout_height="@dimen/buttonHeight"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.22000003"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/round"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/primaryTextColor"
+                android:text="@string/round" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/square"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/primaryTextColor"
+                android:text="@string/square" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <HorizontalScrollView
+            android:layout_width="@dimen/GenericCardWidth"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="14dp"
+            app:layout_constraintBottom_toTopOf="@+id/ingredientsCardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pizzaShapeToggleGroup"
+            app:layout_constraintVertical_bias="0.7">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/space_min"
+                app:singleLine="true"
+                />
+        </HorizontalScrollView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ingredientsCardView"
+            android:layout_width="@dimen/GenericCardWidth"
+            android:layout_height="@dimen/ingredientCardHeight"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="@dimen/corner_rad"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.43"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pizzaShapeToggleGroup"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="411dp"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/product_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ingredients"
+                    android:textAppearance="@style/TextAppearance.Ingredients.Title"
+                    app:layout_constraintBottom_toTopOf="@+id/cheese_radio"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.04"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.48000002" />
+
+                <CheckBox
+                    android:id="@+id/mushrooms"
+                    android:layout_width="111dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="50dp"
+                    android:checked="false"
+                    android:text="@string/mushrooms"
+                    android:translationY="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/pepperoni_box"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/pepperoni_box"
+                    app:layout_constraintTop_toTopOf="@+id/top"
+                    app:layout_constraintVertical_bias="0.3" />
+
+                <CheckBox
+                    android:id="@+id/pepperoni_box"
+                    android:layout_width="100dp"
+                    android:layout_height="23dp"
+                    android:layout_marginBottom="60dp"
+                    android:checked="false"
+                    android:text="@string/pepperoni"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/left"
+                    app:layout_constraintTop_toTopOf="@+id/top"
+                    app:layout_constraintVertical_bias="0.115" />
+
+                <CheckBox
+                    android:id="@+id/veggies"
+                    android:layout_width="93dp"
+                    android:layout_height="30dp"
+                    android:checked="false"
+                    android:text="@string/veggies"
+                    android:translationY="40dp"
+                    app:layout_constraintBottom_toTopOf="@+id/top2"
+                    app:layout_constraintEnd_toEndOf="@+id/mushrooms"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/left"
+                    app:layout_constraintTop_toTopOf="@+id/top"
+                    app:layout_constraintVertical_bias="0.84000003" />
+
+                <CheckBox
+                    android:id="@+id/anchovies"
+                    android:layout_width="103dp"
+                    android:layout_height="21dp"
+                    android:layout_marginBottom="150dp"
+                    android:checked="false"
+                    android:text="@string/anchovies"
+                    android:translationY="60dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/veggies"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/left"
+                    app:layout_constraintTop_toBottomOf="@+id/veggies"
+                    app:layout_constraintVertical_bias="0.04000002" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="31dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="49dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/top2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="147dp" />
+
+                <RadioGroup
+                    android:id="@+id/cheese_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.22"
+                    app:layout_constraintStart_toEndOf="@+id/mushrooms"
+                    app:layout_constraintTop_toTopOf="@+id/top"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/cheeseRadioBtn"
+                        style="@style/AppTheme.RadioButton"
+                        android:text="@string/cheese" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/noCheeseRadioBtn"
+                        style="@style/AppTheme.RadioButton"
+                        android:text="@string/noCheese" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/xCheeseRadioBtn"
+                        style="@style/AppTheme.RadioButton"
+                        android:text="@string/xCheese" />
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/contactCardView"
+            android:layout_width="@dimen/GenericCardWidth"
+            android:layout_height="@dimen/contactCardHeight"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="@dimen/corner_rad"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.43"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ingredientsCardView"
+            app:layout_constraintVertical_bias="0.050000012">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nameEditText"
+                    style="@style/AppTheme.TextField"
+                    android:layout_width="285dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    app:endIconMode="clear_text"
+                    app:helperText="@string/name_field_helper"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:startIconDrawable="@drawable/ic_person_black_24dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputName"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:hint="@string/name_field_hint" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phoneEditText"
+                    style="@style/AppTheme.TextField"
+                    android:layout_width="285dp"
+                    android:layout_height="65dp"
+                    android:layout_marginBottom="10dp"
+                    app:endIconMode="clear_text"
+                    app:helperText="@string/phone_field_helper"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/nameEditText"
+                    app:layout_constraintHorizontal_bias="0.19"
+                    app:layout_constraintStart_toStartOf="@+id/nameEditText"
+                    app:layout_constraintTop_toTopOf="@+id/guideline"
+                    app:startIconDrawable="@drawable/ic_phone_black_24dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:hint="@string/phone_field_hint"
+                        android:maxLength="@dimen/phoneFormat" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="90dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/placeOrder"
+            android:layout_width="@dimen/GenericCardWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:layout_marginBottom="24dp"
+            android:text="@string/placeOrder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.44"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactCardView"
+            app:layout_constraintVertical_bias="0.120000005" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

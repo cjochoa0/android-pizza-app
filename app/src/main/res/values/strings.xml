@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Pizza Order</string>
+    <string name="round">Round</string>
+    <string name="square">Square</string>
+    <string name="ingredients">Ingredients:</string>
+    <string name="noCheese">No Cheese</string>
+    <string name="cheese">Cheese</string>
+    <string name="xCheese">2x Cheese</string>
+    <string name="pepperoni">Pepperoni</string>
+    <string name="mushrooms">Mushrooms</string>
+    <string name="veggies">Veggies</string>
+    <string name="anchovies">Anchovies</string>
+    <string name="name_field_helper">First name + last name</string>
+    <string name="name_field_hint">Name</string>
+    <string name="phone_field_helper">10 digit required</string>
+    <string name="phone_field_hint">Phone number</string>
+    <string name="placeOrder">Place Order</string>
+    <string name="empty">Field Required</string>
+    <string name="invalidPhoneFormat">Phone number not valid</string>
+</resources>

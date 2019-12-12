@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+
+    <item type="dimen" name="space_min">8dp</item>
+
+    <item type="dimen" name="space_mid">16dp</item>
+
+    <item type="dimen" name="space_big">32dp</item>
+
+    <item type="dimen" name="corner_rad">8dp</item>
+
+    <item type="dimen" name="GenericCardWidth">301dp</item>
+
+    <item type="dimen" name="ingredientCardHeight">250dp</item>
+
+    <item type="dimen" name="contactCardHeight">180dp</item>
+
+    <item type="dimen" name="buttonHeight">60dp</item>
+
+    <item type="dimen" name="scrollHeight">1000dp</item>
+
+    <item type="dimen" name="phoneFormat">14</item>
+</resources>
